@@ -1,0 +1,53 @@
+pizza_menu <- data.frame(
+    piz_name = c("Hawiian", "Seafood", "Spicy Chicken", "Pepperoni"),
+    select = c(1, 2, 3, 4),
+    size = c("S", "M", "L", "XL"),
+    price = c(2, 2, 2, 2)
+
+)
+
+order_piz <- function() {
+    total_price <- 0
+    total_unit <- 0
+    print("Welcome to the MYPIZZAS, What do you want ")
+    flush.console()
+    cus_name <- readline("What is your name Broo! : ")
+    cus_phonne <- readline("I want to your phone numbers? : ")
+    location <- readline("Where is your address? : ")
+    cus_order_add <- 1
+    count <- 0
+    inputvalues <- c()
+
+        ## order one
+        while(cus_order_add != 0 && count <= 10) {
+        print(paste("Hi", cus_name))
+        print(pizza_menu)
+        flush.console()
+        cus_order_pizza <- readline("What pizza to order (select number order 1 or 2 or 3 or 4): ")
+        cus_order_size <- readline("What size pizze bro (select size S or M or L or XL): ")
+        cus_order_quan <- readline("How many quantity? ( 1 or 2 or 10 eiei): ")
+
+        ## orders
+        print(paste("Do you need anyting else? Broo", cus_name))
+        flush.console()
+        cus_order_add <- readline("Do it again (press 1), No more (press 0) :")
+        count = count + 1
+
+        ## Show menu
+
+        list_menu <- paste(count ,"pizza", pizza_menu$piz_name[as.numeric(cus_order_pizza)])
+        list_size <- paste(cus_order_size)
+        list_quan <- paste("Quantity", cus_order_quan)
+
+        inputvalues <- c(inputvalues, list_menu, list_size, list_quan)
+        all_menu <- inputvalues
+
+    }
+
+        print(paste("Mr.", cus_name))
+        print("All you menu")
+        print(paste("Total menu :", all_menu))
+
+}
+
+order_piz()
