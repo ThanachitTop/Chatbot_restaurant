@@ -1,2 +1,2 @@
 # Chatbot_restaurant
-โปรเจคสร้าง Chatbot สั่งอาหาร เขียนทั้ง R, Python
+โปรเจคสร้าง Chatbot สั่งอาหาร โดยใช้ภาษา R
